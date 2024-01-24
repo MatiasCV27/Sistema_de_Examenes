@@ -1,0 +1,13 @@
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.navLinks {
+    text-decoration: none;
+    color: white;
+    font-size: .9em;
+}
+
+.navLinks:hover {
+    color: lightgrey;
+}
