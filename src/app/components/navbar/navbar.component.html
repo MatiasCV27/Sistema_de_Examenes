@@ -20,7 +20,8 @@
         Cerrar sesión 
     </a>
     <button
-        *ngIf="login.isLoggedIn()" 
+        *ngIf="login.isLoggedIn()"
+        routerLink="/admin/profile" 
         mat-button style="margin-left: 10px;" class="navLinks mr20 ml30" aria-label="Example icon-button with heart icon">
         {{ login.getUser().username }}
     </button>
