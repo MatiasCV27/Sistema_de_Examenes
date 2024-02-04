@@ -4,8 +4,24 @@
     </a>
     <span>Portal de exámenes</span>
     <span class="example-spacer"></span>
-    <a [routerLink]="'/login'" class="navLinks" aria-label="Example icon-button with heart icon">Iniciar Sesión 
+    <a 
+        *ngIf="!login.isLoggedIn()" 
+        [routerLink]="'/login'" class="navLinks" aria-label="Example icon-button with heart icon">
+        Iniciar Sesión 
     </a>
-    <a [routerLink]="'/signup'" class="navLinks mr20 ml30" aria-label="Example icon-button with heart icon">Registrarse 
+    <a 
+        *ngIf="!login.isLoggedIn()" 
+        [routerLink]="'/signup'" class="navLinks mr20 ml30" aria-label="Example icon-button with heart icon">
+        Registrarse 
     </a>
+    <a 
+        *ngIf="login.isLoggedIn()" 
+        (click)="logout()" class="navLinks mr20 ml30" aria-label="Example icon-button with heart icon">
+        Cerrar sesión 
+    </a>
+    <button
+        *ngIf="login.isLoggedIn()" 
+        mat-button style="margin-left: 10px;" class="navLinks mr20 ml30" aria-label="Example icon-button with heart icon">
+        {{ login.getUser().username }}
+    </button>
 </mat-toolbar>
