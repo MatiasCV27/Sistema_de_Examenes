@@ -11,6 +11,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
 import { ViewCategoriasComponent } from './pages/admin/view-categorias/view-categorias.component';
 import { AddCategoriaComponent } from './pages/admin/add-categoria/add-categoria.component';
+import { ViewExamenesComponent } from './pages/admin/view-examenes/view-examenes.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -21,7 +22,8 @@ const routes: Routes = [
     { path: 'profile', component: ProfileComponent },
     { path: '', component: WelcomeComponent },
     { path: 'categorias', component: ViewCategoriasComponent },
-    { path: 'add-categoria', component: AddCategoriaComponent }
+    { path: 'add-categoria', component: AddCategoriaComponent },
+    { path: 'examenes', component: ViewExamenesComponent },
   ] },
   
   { path: 'user-dashboard', component: UserDashboardComponent, pathMatch: 'full', canActivate: [NormalGuard] }

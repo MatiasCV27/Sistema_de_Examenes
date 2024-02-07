@@ -28,6 +28,7 @@ import { SidebarComponent } from './pages/admin/sidebar/sidebar.component';
 import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
 import { ViewCategoriasComponent } from './pages/admin/view-categorias/view-categorias.component';
 import { AddCategoriaComponent } from './pages/admin/add-categoria/add-categoria.component';
+import { ViewExamenesComponent } from './pages/admin/view-examenes/view-examenes.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { AddCategoriaComponent } from './pages/admin/add-categoria/add-categoria
     SidebarComponent,
     WelcomeComponent,
     ViewCategoriasComponent,
-    AddCategoriaComponent
+    AddCategoriaComponent,
+    ViewExamenesComponent
   ],
   imports: [
     BrowserModule,

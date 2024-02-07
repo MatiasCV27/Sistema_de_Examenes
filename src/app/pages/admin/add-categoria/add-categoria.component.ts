@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { CategoriaService } from 'src/app/services/categoria.service';
 import Swal from 'sweetalert2';
 
@@ -15,7 +16,7 @@ export class AddCategoriaComponent implements OnInit {
     descripcion: ''
   }
 
-  constructor(private categoriaService: CategoriaService, private snack: MatSnackBar) { }
+  constructor(private categoriaService: CategoriaService, private snack: MatSnackBar, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -32,6 +33,7 @@ export class AddCategoriaComponent implements OnInit {
         this.categoria.titulo == '';
         this.categoria.descripcion == '';
         Swal.fire('Categoria agregada', 'La categoria ha sido agregada con exito', 'success');
+        this.router.navigate(['/admin/categorias'])
       },
       (error) => {
         console.log(error);
