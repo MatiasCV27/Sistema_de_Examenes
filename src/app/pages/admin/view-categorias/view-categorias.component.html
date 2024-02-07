@@ -2,11 +2,14 @@
     <mat-list>
         <div mat-subheader class="padTitle">Todas las categorias</div>
         <div *ngFor="let c of categorias" class="textStyle">
-            <div class="cont-categoria">
-                <div>{{ c.titulo }}</div>
-                <div class="descp">{{ c.descripcion }}</div>
-                <hr>
+            <div class="catCont">
+                <mat-icon mat-list-icon>category</mat-icon>
+                <div class="cont-categoria"> 
+                    <div>{{ c.titulo }}</div>
+                    <div class="descp">{{ c.descripcion }}</div>
+                </div>
             </div> 
+            <hr>
         </div>
     </mat-list>
     <div class="container text-center">

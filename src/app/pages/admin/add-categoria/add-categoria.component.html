@@ -1,1 +1,24 @@
-<p>add-categoria works!</p>
+<mat-card>
+    <h1 class="titlteSpaces">Agregar nueva categoria</h1>
+    <mat-card-content>
+        <div class="bootstrap-wrappper">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <form action="">
+                        <mat-form-field class="w100" appearance="outline">
+                            <mat-label>Titulo</mat-label>
+                            <input autofocus type="text" name="titulo" matInput placeholder="Dijite el titulo de la categoria">
+                        </mat-form-field>
+                        <mat-form-field class="w100" appearance="outline">
+                            <mat-label>Descripción</mat-label>
+                            <textarea name="descripcion" matInput rows="15" placeholder="Dijite la descripción de la categoria"></textarea>
+                        </mat-form-field>
+                        <div class="container text-center">
+                            <button mat-raised-button color="primary">Guardar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>

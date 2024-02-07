@@ -6,7 +6,8 @@
     font-size: 14px;
 }
 .cont-categoria {
-    padding: 0px 32px;
+    padding-right: 32px;
+    padding-left: 16px;
 }
 
 .padTitle {
@@ -19,5 +20,11 @@
 }
 
 hr {
-    margin: 24px 0;
+    margin: 24px 32px;
+}
+
+.catCont {
+    display: flex;
+    padding-left: 32px;
+    align-items: center;
 }

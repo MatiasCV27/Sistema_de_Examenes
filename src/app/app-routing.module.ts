@@ -10,6 +10,7 @@ import { AdminGuard } from './services/admin.guard';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
 import { ViewCategoriasComponent } from './pages/admin/view-categorias/view-categorias.component';
+import { AddCategoriaComponent } from './pages/admin/add-categoria/add-categoria.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -19,7 +20,8 @@ const routes: Routes = [
   { path: 'admin', component: DashboardComponent, canActivate: [AdminGuard], children: [
     { path: 'profile', component: ProfileComponent },
     { path: '', component: WelcomeComponent },
-    { path: 'categorias', component: ViewCategoriasComponent }
+    { path: 'categorias', component: ViewCategoriasComponent },
+    { path: 'add-categoria', component: AddCategoriaComponent }
   ] },
   
   { path: 'user-dashboard', component: UserDashboardComponent, pathMatch: 'full', canActivate: [NormalGuard] }
