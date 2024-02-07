@@ -1,0 +1,16 @@
+<mat-card class="padCard">
+    <mat-list>
+        <div mat-subheader class="padTitle">Todas las categorias</div>
+        <div *ngFor="let c of categorias" class="textStyle">
+            <div class="cont-categoria">
+                <div>{{ c.titulo }}</div>
+                <div class="descp">{{ c.descripcion }}</div>
+                <hr>
+            </div> 
+        </div>
+    </mat-list>
+    <div class="container text-center">
+        <button mat-raised-button color="primary">Agregar Categoria</button>
+    </div>
+</mat-card>
+
