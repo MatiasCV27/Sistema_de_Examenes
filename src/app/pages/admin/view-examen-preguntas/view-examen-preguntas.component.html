@@ -5,9 +5,28 @@
             <mat-card *ngFor="let p of preguntas; let i = index" class="mt20">
                 <mat-card-content>
                     <p>
-                        <b>{{ i + 1 }})</b>
-                        <span class="ml20" [innerHTML]="p.contenido"></span>
+                        <b>{{ i + 1 }})<span class="ml20" [innerHTML]="p.contenido"></span></b>
                     </p>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p><b>1)</b> {{ p.opcion1 }}</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p><b>2)</b> {{ p.opcion2 }}</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p><b>3)</b> {{ p.opcion3 }}</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p><b>4)</b> {{ p.opcion4 }}</p>
+                            </div>
+                        </div>
+                        <mat-divider></mat-divider>
+                        <p class="mt20">
+                            <b>Respuesta correcta: {{ p.respuesta }}</b>
+                        </p>
+                    </div>
                 </mat-card-content>
             </mat-card>
         </div>
