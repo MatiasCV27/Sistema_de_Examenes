@@ -16,6 +16,7 @@ import { AddExamenComponent } from './pages/admin/add-examen/add-examen.componen
 import { ActualizarExamenComponent } from './pages/admin/actualizar-examen/actualizar-examen.component';
 import { ViewExamenPreguntasComponent } from './pages/admin/view-examen-preguntas/view-examen-preguntas.component';
 import { AddPreguntaComponent } from './pages/admin/add-pregunta/add-pregunta.component';
+import { ActualizarPreguntaComponent } from './pages/admin/actualizar-pregunta/actualizar-pregunta.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -31,7 +32,8 @@ const routes: Routes = [
     { path: 'add-examen', component: AddExamenComponent },
     { path: 'examen/:examenId', component: ActualizarExamenComponent },
     { path: 'ver-preguntas/:examenId/:titulo', component: ViewExamenPreguntasComponent },
-    { path: 'add-pregunta/:examenId/:titulo', component: AddPreguntaComponent}
+    { path: 'add-pregunta/:examenId/:titulo', component: AddPreguntaComponent},
+    { path: 'pregunta/:examenId', component: ActualizarPreguntaComponent}
   ] },
   
   { path: 'user-dashboard', component: UserDashboardComponent, pathMatch: 'full', canActivate: [NormalGuard] }

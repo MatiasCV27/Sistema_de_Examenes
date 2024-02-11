@@ -14,10 +14,18 @@ export class PreguntaService {
   }
 
   public guardarPregunta(pregunta:any) {
-    return this.http.post(`${baserUrl}/pregunta/`, pregunta)
+    return this.http.post(`${baserUrl}/pregunta/`, pregunta);
   }
 
   public eliminarPregunta(preguntaId:any) {
-    return this.http.delete(`${baserUrl}/pregunta/${preguntaId}`)
+    return this.http.delete(`${baserUrl}/pregunta/${preguntaId}`);
+  }
+
+  public actualizarPregunta(pregunta:any) {
+    return this.http.put(`${baserUrl}/pregunta/`, pregunta);
+  }
+
+  public obtenerPregunta(preguntaId:any) {
+    return this.http.get(`${baserUrl}/pregunta/${preguntaId}`);
   }
 }
