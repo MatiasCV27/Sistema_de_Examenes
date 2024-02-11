@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
 import { PreguntaService } from 'src/app/services/pregunta.service';
 import Swal from 'sweetalert2';
@@ -22,7 +23,11 @@ export class AddPreguntaComponent implements OnInit {
     respuesta: ''
   }
 
-  constructor(private route:ActivatedRoute, private preguntaService: PreguntaService) { }
+  constructor(
+    private route:ActivatedRoute, 
+    private preguntaService: PreguntaService,
+    private snack: MatSnackBar
+  ) { }
 
   ngOnInit(): void {
     this.examenId = this.route.snapshot.params['examenId'];
@@ -54,6 +59,5 @@ export class AddPreguntaComponent implements OnInit {
       }
     )
   }
-
 
 }
