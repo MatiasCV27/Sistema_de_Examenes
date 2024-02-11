@@ -13,4 +13,8 @@ export class PreguntaService {
     return this.http.get(`${baserUrl}/pregunta/examen/todos/${examenId}`);
   }
 
+  public guardarPregunta(pregunta:any) {
+    return this.http.post(`${baserUrl}/pregunta/`, pregunta)
+  }
+
 }
