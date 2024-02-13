@@ -33,7 +33,7 @@ const routes: Routes = [
     { path: 'examen/:examenId', component: ActualizarExamenComponent },
     { path: 'ver-preguntas/:examenId/:titulo', component: ViewExamenPreguntasComponent },
     { path: 'add-pregunta/:examenId/:titulo', component: AddPreguntaComponent},
-    { path: 'pregunta/:examenId', component: ActualizarPreguntaComponent}
+    { path: 'pregunta/:preguntaId', component: ActualizarPreguntaComponent}
   ] },
   
   { path: 'user-dashboard', component: UserDashboardComponent, pathMatch: 'full', canActivate: [NormalGuard] }

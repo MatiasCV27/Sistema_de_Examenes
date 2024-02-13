@@ -1,13 +1,13 @@
 <div class="bootstrap-wrapper">
     <div class="row mt20">
         <div class="col-md-12">
-            <!--<h1 class="mt10">Actualizar preguntas a {{ pregunta.examen.titulo }}</h1>-->
+            <h1 class="mt10">Actualizar preguntas a {{ pregunta.examen.titulo }}</h1>
             <mat-card>
                 <mat-card-header>
                     <mat-card-subtitle>Digite los detalles de la pregunta</mat-card-subtitle>
                 </mat-card-header>
-                <!--<mat-card-content>
-                    <form class="mt20" *ngIf="pregunta" (ngsubmit)="actualizarDatosDeLaPregunta()">
+                <mat-card-content>
+                    <form class="mt20" *ngIf="pregunta" (ngSubmit)="actualizarDatosDeLaPregunta()">
                         <mat-form-field class="w100">
                             <mat-label>Digite el contenido de la pregunta</mat-label>
                             <textarea rows="5" matInput placeholder="Escribe squi" name="contenido" [(ngModel)]="pregunta.contenido"></textarea>
@@ -51,7 +51,7 @@
                             <button mat-raised-button color="primary">Actualizar</button>
                         </div>
                     </form>
-                </mat-card-content>-->
+                </mat-card-content>
             </mat-card>
         </div>
     </div>
