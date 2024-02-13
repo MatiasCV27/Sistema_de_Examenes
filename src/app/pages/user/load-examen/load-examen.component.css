@@ -1,0 +1,8 @@
+.example-header-image {
+    background-image: url('/src/assets/imgs/exam.png');
+    background-size: cover;
+}
+
+.pt0 {
+    padding-top: 0;
+}
