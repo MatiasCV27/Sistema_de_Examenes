@@ -2,7 +2,7 @@
     <div class="container fluid">
         <h1>Examenes disponibles</h1>
         <div class="row mt20" *ngIf="examenes">
-            <div class="col-md-4" *ngFor="let e of examenes">
+            <div class="col-md-6" *ngFor="let e of examenes">
                 <mat-card class="mb20">
                     <mat-card-header>
                         <div mat-card-avatar class="example-header-image"></div>
@@ -13,12 +13,10 @@
                         <p>{{ e.descripcion }}</p>
                     </mat-card-content>
                     <mat-card-actions class="pt0">
-                        <button mat-button color="accent">Preguntas: {{ e.numeroDePreguntas }}</button>
-                        <button mat-button color="accent">P.M: {{ e.puntosMaximos }}</button>
-                    </mat-card-actions>
-                    <mat-card-actions class="pt0">
                         <button mat-button color="primary">Ver</button>
                         <button mat-button color="accent">Empezar</button>
+                        <button mat-button color="accent">Preguntas: {{ e.numeroDePreguntas }}</button>
+                        <button mat-button color="accent">Puntos maximos: {{ e.puntosMaximos }}</button>
                     </mat-card-actions>
                 </mat-card>
             </div>
