@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ExamenService } from 'src/app/services/examen.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-instrucciones',
@@ -14,7 +15,8 @@ export class InstruccionesComponent implements OnInit {
 
   constructor(
     private examenService: ExamenService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -28,7 +30,20 @@ export class InstruccionesComponent implements OnInit {
         console.log(error)
       }
     )
-    
+  }
+
+  empezarExamen() {
+    Swal.fire({
+      title: '¿Quieres comenzar el examen?',
+      showCancelButton: true,
+      cancelButtonText: 'Cancelar',
+      confirmButtonText: 'Empezar',
+      icon: 'info'
+    }).then((result:any)=> {
+      if (result.isConfirmed) {
+        this.router.navigate(['/start/'+this.examenId])
+      }
+    })
   }
 
 }

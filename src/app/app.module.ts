@@ -39,6 +39,7 @@ import { ActualizarPreguntaComponent } from './pages/admin/actualizar-pregunta/a
 import { SidebarComponent as UserSidebar  } from './pages/user/sidebar/sidebar.component';
 import { LoadExamenComponent } from './pages/user/load-examen/load-examen.component';
 import { InstruccionesComponent } from './pages/user/instrucciones/instrucciones.component';
+import { StartComponent } from './pages/user/start/start.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import { InstruccionesComponent } from './pages/user/instrucciones/instrucciones
     ActualizarPreguntaComponent,
     UserSidebar,
     LoadExamenComponent,
-    InstruccionesComponent
+    InstruccionesComponent,
+    StartComponent
   ],
   imports: [
     BrowserModule,

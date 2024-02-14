@@ -19,11 +19,13 @@ import { AddPreguntaComponent } from './pages/admin/add-pregunta/add-pregunta.co
 import { ActualizarPreguntaComponent } from './pages/admin/actualizar-pregunta/actualizar-pregunta.component';
 import { LoadExamenComponent } from './pages/user/load-examen/load-examen.component';
 import { InstruccionesComponent } from './pages/user/instrucciones/instrucciones.component';
+import { StartComponent } from './pages/user/start/start.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: 'signup', component: SignupComponent, pathMatch: 'full' },
   { path: 'login', component: LoginComponent, pathMatch: 'full' },
+  { path: 'start/:examenId', component: StartComponent, canActivate: [NormalGuard] },
 
   { path: 'admin', component: DashboardComponent, canActivate: [AdminGuard], children: [
     { path: 'profile', component: ProfileComponent },
@@ -40,7 +42,7 @@ const routes: Routes = [
   
   { path: 'user-dashboard', component: UserDashboardComponent, canActivate: [NormalGuard], children: [
     { path: ':catId', component: LoadExamenComponent },
-    { path: 'instrucciones/:examenId', component: InstruccionesComponent }
+    { path: 'instrucciones/:examenId', component: InstruccionesComponent },
   ] }
 ];
 
