@@ -1,5 +1,9 @@
 import { LocationStrategy } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { subscribeOn } from 'rxjs';
+import { PreguntaService } from 'src/app/services/pregunta.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-start',
@@ -8,12 +12,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StartComponent implements OnInit {
 
+  examenId:any;
+  preguntas:any;
+
   constructor(
-    private locationSt: LocationStrategy
+    private locationSt: LocationStrategy,
+    private preguntaService: PreguntaService,
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
     this.prevenirElBotonDeRetroceso();
+    this.examenId = this.route.snapshot.params['examenId'];
+    console.log(this.examenId);
+    this.cargarPreguntas();
+  }
+
+  cargarPreguntas() {
+    this.preguntaService.listarPreguntasDelExamenParaLaPrueba(this.examenId).subscribe(
+      (data:any) => {
+        console.log(data);
+        this.preguntas = data;
+      },
+      (error) => {
+        console.log(error);
+        Swal.fire('Error', 'Error al cargar las preguntas de la prueba', 'error')
+      }
+    )
   }
 
   prevenirElBotonDeRetroceso() {
