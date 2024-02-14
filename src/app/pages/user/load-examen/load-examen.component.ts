@@ -32,6 +32,7 @@ export class LoadExamenComponent implements OnInit {
         )
       } else {
         console.log("Estams cargando un examen en especifico")
+        this.examenes = [];
       }
   }
 
