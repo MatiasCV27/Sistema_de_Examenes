@@ -29,4 +29,8 @@ export class ExamenService {
     return this.http.put(`${baserUrl}/examen/`, examen)
   }
 
+  public listarExamenesDeUnaCategoria(categoriaId:any) {
+    return this.http.get(`${baserUrl}/examen/categoria/${categoriaId}`)
+  }
+
 }
