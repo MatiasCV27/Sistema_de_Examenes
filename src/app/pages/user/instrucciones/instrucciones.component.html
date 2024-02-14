@@ -1,0 +1,36 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <mat-card class="mt20">
+                    <mat-card-header>
+                        <mat-card-title>Lea las instrucciones de esta pagina cuidadosamente</mat-card-title>
+                        <mat-card-subtitle>Un paso más para comenzar</mat-card-subtitle>
+                    </mat-card-header>
+                    <mat-card-content class="mt20">
+                        <h1>{{ examen.titulo }}</h1>
+                        <p>{{ examen.descripcion }}</p>
+                        <mat-divider></mat-divider><br>
+                        <h1>Instrucciones importantes</h1>
+                        <ul>
+                            <li>Este cuestionario es solo para fines practicos.</li>
+                            <li>Tienes que enviar el cuestionario en <b>{{ examen.numeroDePreguntas * 2 }}</b> minutos.</li>numeroDePreguntas
+                            <li>Puede intentar el cuestionario cualquier cantidad de veces.</li>
+                            <li>Hay <b>{{ examen.puntosMaximos / examen.numeroDePreguntas }}</b> puntos por preguntas.</li>
+                        </ul>
+                        <mat-divider></mat-divider><br>
+                        <h1>Intentos de la prueba</h1>
+                        <ul>
+                            <li>Presione el boton <b>Empezar</b> para iniciar el examen.</li>
+                            <li>El tiempo comenzará en el momento que haga clic en el boton de inicio.</li>
+                            <li>No puede reaunudar este cuestionario si se interrumpe por algun motivo.</li>
+                            <li>Desplacese hacia abajo para pasar a la siguiente pregunta</li>
+                            <li>Haga clic en el boton enviar cuestionario al finalizar el cuestionario</li>
+                            <li>El informe de la pregunta se generara automaticamente en forma de copia PDF</li>
+                        </ul>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>
