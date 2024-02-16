@@ -14,6 +14,11 @@ export class StartComponent implements OnInit {
 
   examenId:any;
   preguntas:any;
+  puntosConseguidos = 0;
+  respuestasCorrectas = 0;
+  intentos = 0;
+  
+  esEnviado = false;
 
   constructor(
     private locationSt: LocationStrategy,
@@ -33,6 +38,10 @@ export class StartComponent implements OnInit {
       (data:any) => {
         console.log(data);
         this.preguntas = data;
+        this.preguntas.forEach((p:any) => {
+          p['respuestaDada'] = '';
+        })
+        console.log(this.preguntas)
       },
       (error) => {
         console.log(error);
@@ -45,6 +54,34 @@ export class StartComponent implements OnInit {
     history.pushState(null, null!, location.href);
     this.locationSt.onPopState(() => {
       history.pushState(null, null!, location.href)
+    })
+  }
+
+  enviarCuestionario() {
+    Swal.fire({
+      title: '¿Quieres eviar el examen?',
+      showCancelButton: true,
+      cancelButtonText: 'Cancelar',
+      confirmButtonText: 'Enviar',
+      icon: 'info'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.esEnviado = true;
+        this.preguntas.forEach((p:any) => {
+          if (p.respuestaDada == p.respuesta) {
+            this.respuestasCorrectas++;
+            let puntos = this.preguntas[0].examen.puntosMaximos/this.preguntas.length;
+            this.puntosConseguidos += puntos;
+          }
+          if (p.respuestaDada.trim() != '') {
+            this.intentos++;
+          }
+        })
+        console.log("Respuestas correctas: " + this.respuestasCorrectas);
+        console.log("Puntos conseguidos: " + this.puntosConseguidos);
+        console.log("Intentos: " + this.intentos)
+        console.log(this.preguntas);
+      }
     })
   }
 
